@@ -1,8 +1,12 @@
+package JavaFx01TextField;
+
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class Main extends Application {
     public static void main(String[] args) {
@@ -11,18 +15,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        StackPane layout = new StackPane();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("sample.fxml")));
 
-        Button button = new Button("Hello World");
-
-        button.setOnAction(actionEvent -> {
-            System.out.println(System.getProperty("java.version"));
-        });
-
-        layout.getChildren().add(button);
-        Scene scene = new Scene(layout, 300, 300);
+        Scene scene = new Scene(root, 300, 300);
         stage.setScene(scene);
-        stage.setTitle("JavaFx 19");
+        stage.setTitle("My First GUI App");
         stage.show();
     }
 }
