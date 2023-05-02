@@ -1,4 +1,4 @@
-package JavaFx01TextField;
+package JavaFx02Button;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
